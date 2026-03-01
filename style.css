@@ -1,0 +1,193 @@
+@font-face {
+    font-family: Kelmscott;
+    src: url("https://rawcdn.githack.com/seeddisperser/kelmscott-mono/main/KelmscottMono.otf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 5rem;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    text-align: left;
+    font-family: "Libertinus Mono", monospace;
+    font-size: 25px;
+    color: white;
+    background: rgb(160, 174, 192);
+    background-image: url("https://github.com/lmosselaer/lmosselaer.github.io/blob/main/assets/bg-helldisc4000.jpg?raw=true");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: saturation;
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.ascii {
+    font-family: monospace;
+    display: grid;
+    white-space: pre;
+    font-weight: bolder;
+    line-height: 1;
+}
+
+.columns {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.largeview {
+    display: inline-block;
+}
+
+.smallview {
+    display: none;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .largeview {
+        display: none;
+    }
+
+    .smallview {
+        display: inline-block;
+    }
+}
+
+h1 {
+    font-family: Kelmscott, monospace;
+    text-transform: uppercase;
+    font-size: 2.34em;
+    margin: 0;
+    margin-top: 1rem;
+}
+
+h2 {
+    font-family: Kelmscott, monospace;
+    font-size: 1.17em;
+    margin: 0;
+}
+
+h3 {
+    font-family: Kelmscott, monospace;
+    font-size: 1.17em;
+    font-style: italic;
+    margin: 0;
+}
+
+p, ol {
+    font-size: 1em;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+footer {
+    text-align: left;
+    padding-bottom: 1rem;
+}
+
+small {
+    font-size: 1em;
+    font-style: italic;
+    margin: 0;
+}
+
+a {
+    color: #ffff00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ol {
+    list-style: none;
+    counter-reset: item;
+    padding-left: 0;
+}
+
+ol li {
+    counter-increment: item;
+}
+
+ol li::before {
+    content: counter(item) ". ";
+}
+
+img {
+    border: ridge white 5px;
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.button {
+    border: outset hsl(0, 0%, 100%) 2.5px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    color: rgb(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 0 1rem;
+        font-size: 15px;
+    }
+    
+    .largeview {
+        display: none;
+    }
+
+    .smallview {
+        display: inline-block;
+    }
+    
+    .columns {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .btn-group {
+        gap: 3px;
+    }
+    
+    img {
+        border-width: 3px;
+    }
+}

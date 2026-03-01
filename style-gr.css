@@ -1,0 +1,119 @@
+@font-face {
+    font-family: Kelmscott;
+    src: url("https://github.com/seeddisperser/kelmscott-mono/blob/main/KelmscottMono.otf");
+}
+
+body {
+    height: calc(100vh - 50px - 23px);
+    padding-top: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-family: "Kelmscott", "Libertinus Mono", monospace;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.7);
+    background: #fffcf2;
+    background-size: cover;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    float: left;
+    width: 50%;
+    padding-right: 2%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ascii{
+    font-family: monospace;
+    display: grid;
+    white-space: pre;
+    font-weight: bolder;
+    line-height: 1;
+}
+
+.largeview{
+   display: inline-block;
+}
+
+.smallview{
+   display:none;
+}
+
+@media screen and (max-width: 1200px) {
+    .largeview{
+       display:none;
+    }
+
+    .smallview{
+       display:inline-block;
+    }
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 1em;
+    white-space: pre;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 1em;
+}
+    
+h3 {
+    text-transform: uppercase;
+    font-weight: medium;
+    font-size: 1em;
+    font-style: italic
+}
+
+p {
+    line-height: 1em;
+    font-size: 1em;
+    text-decoration-line:  underline;
+    text-decoration-color: rgb(231, 63, 37);
+
+}
+
+small {
+    font-weight: 100;
+    font-size: 1em;
+    line-height: 1em;
+    font-style: italic;
+    text-decoration-line:  underline;
+    text-decoration-color: rgb(231, 63, 37);
+}
+
+nav {
+    line-height: 1em;
+}
+
+a {
+    color: rgb(231, 63, 37);
+    font-weight: normal;
+    text-decoration: none;
+}
+
+footer {
+    margin-top: auto;
+    text-align: right;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
