@@ -18,17 +18,12 @@ body {
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 5rem;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
     text-align: left;
     font-family: "Libertinus Mono", monospace;
     font-size: 25px;
-    color: white;
-    background: rgb(160, 174, 192);
-    background-image: url("https://github.com/lmosselaer/lmosselaer.github.io/blob/main/assets/bg-helldisc4000.jpg?raw=true");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgb(160, 174, 192) url("assets/bg-helldisc2000.webp") center 1200px fixed;
     background-blend-mode: saturation;
 }
 
@@ -119,7 +114,7 @@ small {
 }
 
 a {
-    color: #ffff00;
+    color: rgba(255, 255, 0, 0.8);
     text-decoration: none;
 }
 
@@ -142,11 +137,11 @@ ol li::before {
 }
 
 img {
-    border: ridge white 5px;
+    border: ridge rgba(255, 255, 255, 0.8) 5px;
     width: 100%;
     height: auto;
     display: block;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
 }
 
 .btn-group {
@@ -156,7 +151,7 @@ img {
 }
 
 .button {
-    border: outset hsl(0, 0%, 100%) 2.5px;
+    border: outset rgb(255, 255, 255) 2.5px;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.22);
     box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
@@ -166,7 +161,7 @@ img {
 
 @media (max-width: 600px) {
     body {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
         font-size: 15px;
     }
     
