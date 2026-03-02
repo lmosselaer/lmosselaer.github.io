@@ -49,6 +49,46 @@
                 <li>Server Thoughts and Desires</li>
                 <li>Requiem for Audio Data Loss and Organ</li>
             </ol>
+            <audio id="album-player" preload="none">
+                <source src="assets/audio/00-Memory_Forgetter.mp3" type="audio/mpeg">
+            </audio>
+            <p>
+                <a href="#" id="play-button" onclick="toggleAudio(); return false;">
+                    <span class="icon">►</span></a>
+                <span id="time-remaining">47:38</span>
+            </p>
+
+            <script>
+                const player = document.getElementById("album-player");
+                const icon = document.getElementById("play-button");
+                const timeDisplay = document.getElementById('time-remaining');
+
+                function formatTime(seconds) {
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return mins + ":" + (secs < 10 ? "0" + secs : secs);
+                }
+
+                function toggleAudio() {
+                    if (player.paused) {
+                        player.play();
+                        icon.textContent = "⏸︎";
+                    } else {
+                        player.pause();
+                        icon.textContent = "►";
+                    }
+                }
+
+                player.addEventListener("timeupdate", function () {
+                    const remaining = player.duration - player.currentTime;
+                    if (!isNaN(remaining)) { timeDisplay.textContent = formatTime(remaining); }
+                });
+
+                player.addEventListener("ended", function () {
+                    button.textContent = "▶";
+                });
+            </script>
+
             <p>
                 Back in 2021, I experimented with the sound of a glitching meditation cd. It turned into a lot more experiments with the manipulation of cd’s and mp3’s to create otherworldly sounds. The resulting album combines both meditative and jarring moments, like a computer’s intense dreams.
             </p>

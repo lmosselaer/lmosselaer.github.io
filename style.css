@@ -22,7 +22,7 @@ body {
     text-align: left;
     font-family: "Libertinus Mono", monospace;
     font-size: 25px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     background: rgb(160, 174, 192) url("assets/bg-helldisc2000.webp") center 1200px fixed;
     background-blend-mode: saturation;
 }
@@ -81,12 +81,14 @@ h1 {
     font-size: 2.34em;
     margin: 0;
     margin-top: 1rem;
+    line-height: 0.8;
 }
 
 h2 {
     font-family: Kelmscott, monospace;
     font-size: 1.17em;
     margin: 0;
+    line-height: 1;
 }
 
 h3 {
@@ -94,17 +96,20 @@ h3 {
     font-size: 1.17em;
     font-style: italic;
     margin: 0;
+    line-height: 1;
 }
 
 p, ol {
     font-size: 1em;
     margin: 0;
     margin-bottom: 1em;
+    line-height: 1.1;
 }
 
 footer {
     text-align: left;
     padding-bottom: 1rem;
+    line-height: 1.1;
 }
 
 small {
@@ -114,13 +119,14 @@ small {
 }
 
 a {
-    color: rgba(255, 255, 0, 0.8);
+    color: rgba(255, 255, 0, 0.9);
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
 }
+
 
 ol {
     list-style: none;
@@ -135,6 +141,7 @@ ol li {
 ol li::before {
     content: counter(item) ". ";
 }
+
 
 img {
     border: ridge rgba(255, 255, 255, 0.8) 5px;
@@ -151,13 +158,31 @@ img {
 }
 
 .button {
-    border: outset rgb(255, 255, 255) 2.5px;
+    border: 2.5px outset rgb(231, 255, 236);
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.22);
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-    color: rgb(0, 0, 0, 0.5);
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+    color: rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
 }
+
+.button:hover {
+    border: 2.5px inset hsl(134, 8%, 5%);
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.22);
+    color: rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+/*
+#play-button {
+    display: inline-block;
+    width: 1em;
+    line-height: 1;
+    vertical-align: center;
+}
+*/
 
 @media (max-width: 600px) {
     body {
