@@ -23,54 +23,268 @@
                 </span>
             </div>
             <nav>
-                <a href="index.html">about</a>&emsp; <a href="audio.html">music</a>&emsp;
-                <a href="video.html"><i>video work</i></a>
+                <a href="index.html">about</a>&emsp;
+                <a href="music.html">music</a>&emsp;
+                <a href="video.html"><i>commisioned work</i></a>
             </nav>
+       <!-- <a href="#" id="darkmode" onclick="toggleDarkMode(); return false;">◐</a> -->
         </header>
         <main>
+            <div class="btn-group">
+                <a href=# class="button active" onclick="filterProjects('all', this); return false;">all</a>
+                <a href=# class="button" onclick="filterProjects('commercial', this); return false;">commercial</a>
+                <a href=# class="button" onclick="filterProjects('mv', this); return false;">music video</a>
+                <a href=# class="button" onclick="filterProjects('film', this); return false;">film</a>
+                <a href=# class="button" onclick="filterProjects('other', this); return false;">other</a>
+            </div>
+            <br>
+
             <div class="columns">
-                <div class="project">
+                <div class="project" data-category="commercial">
                     <a href="https://vimeo.com/693984035" target="_blank">
                         <img src="assets/thumbnails/fd.webp" />
                     </a>
                     <h2>Het Financieele Dagblad</h2>
-                    <h3>Roze</h3>
-                    <p><i>commercial</i><br />music &#43; sound design</p>
+                    <h3>"Roze"</h3>
+                    <h4>commercial</h4>
+                    <p>music <br> sound design</p>
                 </div>
-                <div class="project">
+                <div class="project" data-category="commercial">
                     <a href="https://vimeo.com/702753788" target="_blank">
-                        <img src="assets/thumbnails/monstars.webp" />
+                        <img src="assets/thumbnails/veloretti_ace.webp" />
                     </a>
-                    <h2>New Offsprings</h2>
-                    <h3>Monstars</h3>
-                    <p><i>commercial</i><br />sound design + mix</p>
+                    <h2>Veloretti</h2>
+                    <h3>"Ace/Ivy Two Lite"</h3>
+                    <h4>commercial</h4>
+                    <p>music</p>
                 </div>
-            </div>
-             <div class="columns">
-                <div class="project">
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/puma-exotek.webp" />
+                    </a>
+                    <h2>Puma</h2>
+                    <h3>"Exotek" (Geerten Harmens DC)</h3>
+                    <h4>commercial</h4>
+                    <p>music <br> sound design</p>
+                </div>
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/702753788" target="_blank">
+                        <img src="assets/thumbnails/modernmyths.webp" />
+                    </a>
+                    <h2>Modern Sperm</h2>
+                    <h3>"Modern Myths"</h3>
+                    <h4>commercial</h4>
+                    <p>music</p>
+                </div>
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/nieuweinstituut.webp" />
+                    </a>
+                    <h2>Nieuwe Institituut</h2>
+                    <h3>"Dutch, More or Less"</h3>
+                    <h4>commercial</h4>
+                    <p>music <br> sound design</p>
+                </div>
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/702753788" target="_blank">
+                        <img src="assets/thumbnails/nike-memberdays.webp" />
+                    </a>
+                    <h2>Nike</h2>
+                    <h3>"Member Days"</h3>
+                    <h4>commercial</h4>
+                    <p>music <small>with Ian Alken &amp; Niels den Otter</small> <br> sound design <small>with Niels den Otter</small></p>
+                </div>
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/adidas-speedportal.webp" />
+                    </a>
+                    <h2>Adidas x Rick &amp; Morty</h2>
+                    <h3>"Speedportal FW22"</h3>
+                    <h4>commercial</h4>
+                    <p>music <small>with Amon Tobin</small> <br> sound design <small>with Niels den Otter</small></p>
+                </div>
+                <div class="project" data-category="mv">
                     <a href="https://vimeo.com/693984035" target="_blank">
                         <img src="assets/thumbnails/tgh.webp" />
                     </a>
-                    <h2>A$AP Ant + A$AP Rocky</h2>
-                    <h3>The God Hour</h3>
-                    <p><i>music video</i><br />sound design</p>
+                    <h2>A$AP Ant &amp; A$AP Rocky</h2>
+                    <h3>"The God Hour"</h3>
+                    <h4>music video</h4>
+                    <p>sound design <small>with Niels den Otter</small></p>
                 </div>
-                <div class="project">
-                    <a href="https://vimeo.com/702753788" target="_blank">
-                        <img src="assets/thumbnails/monstars.webp" />
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/tno.webp" />
                     </a>
-                    <h2>New Offsprings</h2>
-                    <h3>Monstars</h3>
-                    <p><i>commercial</i><br />sound design + mix</p>
+                    <h2>The New Originals</h2>
+                    <h3>"FW22"</h3>
+                    <h4>commercial</h4>
+                    <p>music</p>
+                </div>
+                <div class="project" data-category="film">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/karoshi.webp" />
+                    </a>
+                    <h2>"Karoshi"</h2>
+                    <h4>short film</h4>
+                    <p>sound design</p>
+                </div>
+                <div class="project" data-category="film">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/tno.webp" />
+                    </a>
+                    <h2>"Iskander"</h2>
+                    <h4>short film</h4>
+                    <p>sound design</p>
+                </div>
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/crownroyal.webp" />
+                    </a>
+                    <h2>Crown Royal</h2>
+                    <h3>"World of Cans" (Paul Geusebroek DC)</h3>
+                    <h4>commercial</h4>
+                    <p>music <br> sound design <small>with Niels den Otter</small></p>
+                </div>
+                <div class="project" data-category="mv">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/sinister.webp" />
+                    </a>
+                    <h2>Lil Wayne &amp; Cordae</h2>
+                    <h3>"Sinister"</h3>
+                    <h4>music video</h4>
+                    <p>sound design</p>
+                </div>
+                <div class="project" data-category="mv">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/today.webp" />
+                    </a>
+                    <h2>Gunna &amp; Cordae</h2>
+                    <h3>"Today"</h3>
+                    <h4>music video</h4>
+                    <p>sound design</p>
+                </div>
+                <div class="project" data-category="mv">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/mcg.webp" />
+                    </a>
+                    <h2>Anuel AA</h2>
+                    <h3>"McGregor"</h3>
+                    <h4>music video</h4>
+                    <p>sound design</p>
+                </div>
+                <div class="project" data-category="other">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/shortcutz_2.webp" />
+                    </a>
+                    <h2>Shortcutz</h2>
+                    <h3>"10th Annual Awards"</h3>
+                    <h4>trailer &amp; idents</h4>
+                    <p>music</p>
+                </div>
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/ace_tate.webp" />
+                    </a>
+                    <h2>Ace &amp; Tate</h2>
+                    <h3>"A Frame For Every Face"</h3>
+                    <h4>commercial</h4>
+                    <p>music <small>with Sjoerd Limberger</small> <br> sound design <small>with Niels den Otter</small></p>
+                </div>
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/adidas_comfort.webp" />
+                    </a>
+                    <h2>Adidas</h2>
+                    <h3>"Comfort Is Our Sport"</h3>
+                    <h4>commercial</h4>
+                    <p>music <small>with Sjoerd Limberger, Ian Alken &amp; Niels den Otter</small> <br> sound design <small>with Niels den Otter</small></p>
+                </div>
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/youngcapital.webp" />
+                    </a>
+                    <h2>Young Capital</h2>
+                    <h3>"Whatever Works"</h3>
+                    <h4>commercial</h4>
+                    <p>sound design <small>with Niels den Otter</small></p>
+                </div>
+                <div class="project" data-category="commercial">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/ajax.webp" />
+                    </a>
+                    <h2>AFC Ajax</h2>
+                    <h3>"That Makes Us Fly"</h3>
+                    <h4>commercial</h4>
+                    <p>sound design <small>with Niels den Otter</small></p>
+                </div>
+                <div class="project" data-category="mv">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/benikdaar.webp" />
+                    </a>
+                    <h2>Nonchelange &amp; Le Motat</h2>
+                    <h3>"Ben Ik Daar?"</h3>
+                    <h4>music video</h4>
+                    <p>sound design</p>
+                </div>
+                <div class="project" data-category="film">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/tori.webp" />
+                    </a>
+                    <h2>"Tori"</h2>
+                    <h4>tv film</h4>
+                    <p>sound design</p>
+                </div>
+                <div class="project" data-category="other">
+                    <a href="https://vimeo.com/693984035" target="_blank">
+                        <img src="assets/thumbnails/threefold.webp" />
+                    </a>
+                    <h2>Esra Copur</h2>
+                    <h3>"Threefold"</h3>
+                    <h4>expo</h4>
+                    <p>music</p>
                 </div>
             </div>
+
         </main>
 
         <footer>
-            <small>© Luuk van de Mosselaer 2026</small>
-            <!--<a href="https://www.instagram.com/luukage/">▣</a>&emsp;
-    <a href="https://soundcloud.com/lmo21">▤</a>&emsp;
-    <a href="https://www.youtube.com/channel/UC_xtu9wXMcttPfKatHEMKXQ">▦</a>-->
+            © Luuk van de Mosselaer 2026
         </footer>
+
+        <script>
+            function filterProjects(category, button) {
+                const projects = document.querySelectorAll(".project");
+                const buttons = document.querySelectorAll(".btn-group .button");
+
+                projects.forEach((project) => {
+                    if (category === "all" || project.dataset.category === category) {
+                        project.style.display = "";
+                    } else {
+                        project.style.display = "none";
+                    }
+                });
+
+                buttons.forEach((btn) => btn.classList.remove("active"));
+                button.classList.add("active");
+            }
+        </script>
+
+        <script>
+            function toggleDarkMode() {
+                document.body.classList.toggle("dark");
+
+                if (document.body.classList.contains("dark")) {
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    localStorage.setItem("theme", "light");
+                }
+            }
+
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark");
+            }
+        </script>
+
     </body>
 </html>

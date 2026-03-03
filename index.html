@@ -23,11 +23,12 @@
                 </span>
             </div>
             <nav>
-                <a href="index.html"><i>about</i></a
-                >&emsp; <a href="audio.html">music</a>&emsp; <a href="video.html">video work</a><br/>
+                <a href="index.html"><i>about</i></a>&emsp;
+                <a href="music.html">music</a>&emsp;
+                <a href="video.html">commisioned work</a><br/>
             </nav>
+       <!-- <a href="#" id="darkmode" onclick="toggleDarkMode(); return false;">◐</a> -->
         </header>
-
         <main>
             <p>
                 Composer, producer, and sound designer based in Amsterdam. Making floaty and visceral computer music as
@@ -35,16 +36,30 @@
                 outer limits of digital technologies.
                 <br />
                 Get in touch with me by e-mailing
-                <a href="mailto:luukmosselaer@gmail.com?">luukmosselaer@gmail.com</a> or calling
+                <a href="mailto:luukmosselaer@gmail.com">luukmosselaer@gmail.com</a> or calling
                 <a href="tel:+31646540915">+31 6 46540915</a>.
             </p>
             <br/>
         </main>
         <footer>
-            <small>© Luuk van de Mosselaer 2026</small>
-            <!--<a href="https://www.instagram.com/luukage/">▣</a>&emsp;
-        <a href="https://soundcloud.com/lmo21">▤</a>&emsp;
-        <a href="https://www.youtube.com/channel/UC_xtu9wXMcttPfKatHEMKXQ">▦</a>-->
+            © Luuk van de Mosselaer 2026
         </footer>
+
+        <script>
+            function toggleDarkMode() {
+                document.body.classList.toggle("dark");
+
+                if (document.body.classList.contains("dark")) {
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    localStorage.setItem("theme", "light");
+                }
+            }
+
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark");
+            }
+        </script>
+
     </body>
 </html>

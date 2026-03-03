@@ -23,8 +23,10 @@ body {
     font-family: "Libertinus Mono", monospace;
     font-size: 25px;
     color: rgba(255, 255, 255, 0.9);
-    background: rgb(160, 174, 192) url("assets/bg-helldisc2000.webp") center 1200px fixed;
-    background-blend-mode: saturation;
+    background: rgb(160, 174, 192);
+    background-image: url("assets/bg-helldiscgrey2000.webp");
+    background-position: center 1200px;
+    background-attachment: fixed;
 }
 
 main {
@@ -46,8 +48,10 @@ header {
 
 .columns {
     display: grid;
-    gap: 3rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+    margin-bottom: 2rem;
 }
 
 .project {
@@ -88,13 +92,20 @@ h2 {
     font-family: Kelmscott, monospace;
     font-size: 1.17em;
     margin: 0;
-    line-height: 1;
+    line-height: 0.8;
 }
 
 h3 {
     font-family: Kelmscott, monospace;
     font-size: 1.17em;
-    font-style: italic;
+    margin: 0;
+    line-height: 0.8;
+}
+
+h4 {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bolder;
     margin: 0;
     line-height: 1;
 }
@@ -106,14 +117,21 @@ p, ol {
     line-height: 1.1;
 }
 
+hr {
+    border: 2.5px ridge rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+
 footer {
     text-align: left;
     padding-bottom: 1rem;
     line-height: 1.1;
+    font-style: italic;
 }
 
 small {
-    font-size: 1em;
+    font-size: 0.75em;
     font-style: italic;
     margin: 0;
 }
@@ -144,11 +162,13 @@ ol li::before {
 
 
 img {
-    border: ridge rgba(255, 255, 255, 0.8) 5px;
+    border: ridge rgba(255, 255, 255, 1) 5px;
+    border-radius: 5px;
     width: 100%;
     height: auto;
     display: block;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+    margin-bottom: 0.5rem;
 }
 
 .btn-group {
@@ -158,7 +178,7 @@ img {
 }
 
 .button {
-    border: 2.5px outset rgb(231, 255, 236);
+    border: 2.5px outset hsl(133, 100%, 95%);
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.22);
     box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
@@ -166,12 +186,12 @@ img {
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
 }
 
-.button:hover {
-    border: 2.5px inset hsl(134, 8%, 5%);
+.button:hover,.button.active {
+    border: 2.5px inset hsla(120, 10%, 20%);
     box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
-    background: rgba(0, 0, 0, 0.22);
-    color: rgba(0,0,0,0.5);
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    background: rgba(0,0,0,0.1);
+    color: rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
     text-decoration: none;
 }
 
@@ -184,10 +204,29 @@ img {
 }
 */
 
-@media (max-width: 600px) {
+#darkmode {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+body.dark {
+    background-image: url("assets/bg-helldiscdark2000.webp");
+    color:rgba(255, 255, 255, 1);
+}
+
+body.dark .button {
+    background: rgba(255, 255, 255, 0.5);
+    color: rgb(0, 0, 0);
+}
+
+@media (max-width: 750px) {
     body {
         padding: 0 1.5rem;
-        font-size: 15px;
+        font-size: clamp(15px, 4vw, 25px);
+        background-attachment: scroll;
     }
     
     .largeview {
@@ -200,14 +239,10 @@ img {
     
     .columns {
         grid-template-columns: 1fr;
-        gap: 2rem;
     }
-    
-    .btn-group {
-        gap: 3px;
-    }
+
     
     img {
-        border-width: 3px;
+        border-width: min(1vw, 5px);
     }
 }
