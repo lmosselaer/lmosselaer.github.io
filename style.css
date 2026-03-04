@@ -40,10 +40,11 @@ header {
 
 .ascii {
     font-family: monospace;
+    font-size: 0.25em;
     display: grid;
     white-space: pre;
-    font-weight: bolder;
     line-height: 1;
+    color: rgba(190, 219, 253, 0.8);
 }
 
 .columns {
@@ -69,7 +70,7 @@ header {
 }
 
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1100px) {
     .largeview {
         display: none;
     }
@@ -174,7 +175,7 @@ img {
 .btn-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
 }
 
 .button {
@@ -194,15 +195,6 @@ img {
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
     text-decoration: none;
 }
-
-/*
-#play-button {
-    display: inline-block;
-    width: 1em;
-    line-height: 1;
-    vertical-align: center;
-}
-*/
 
 #darkmode {
     position: absolute;
@@ -225,7 +217,7 @@ body.dark .button {
 @media (max-width: 750px) {
     body {
         padding: 0 1.5rem;
-        font-size: clamp(15px, 4vw, 25px);
+        font-size: clamp(18px, 4vw, 25px);
         background-attachment: scroll;
     }
     
