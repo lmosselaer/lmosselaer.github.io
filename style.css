@@ -47,21 +47,6 @@ header {
     color: rgba(190, 219, 253, 0.8);
 }
 
-.ascii pre.loading {
-    font-family: inherit;
-    font-size: inherit;
-    white-space: pre;
-    line-height: inherit;
-    min-height: calc(9 * 1em);
-    color: transparent;
-    background: rgba(255,255,255,0.04);
-}
-
-.ascii pre.loaded {
-    background: none;
-    color: inherit;
-}
-
 .columns {
     display: grid;
     gap: 1rem;
