@@ -15,8 +15,8 @@
     <body>
         <header>
             <div class="ascii">
-                <pre class="largeview" id="ascii-large"></pre>
-                <pre class="smallview" id="ascii-small"></pre>
+                <pre class="largeview loading" id="ascii-large"></pre>
+                <pre class="smallview loading" id="ascii-small"></pre>
             </div>
             <nav>
                 <a href="index.html">about</a>&emsp;
@@ -283,17 +283,25 @@
         </script>
 
         <script>
-            fetch("assets/ascii-large.txt")
-                .then((response) => response.text())
-                .then((data) => {
-                    document.getElementById("ascii-large").textContent = data;
-                });
+            document.addEventListener("DOMContentLoaded", () => {
+                async function loadAscii(id, url) {
+                    const el = document.getElementById(id);
+                    try {
+                        const resp = await fetch(url);
+                        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+                        const txt = await resp.text();
+                        el.textContent = txt;
+                    } catch (e) {
+                        console.error("ASCII load failed:", e);
+                    } finally {
+                        el.classList.remove("loading");
+                        el.classList.add("loaded");
+                    }
+                }
 
-            fetch("assets/ascii-small.txt")
-                .then((response) => response.text())
-                .then((data) => {
-                    document.getElementById("ascii-small").textContent = data;
-                });
+                loadAscii("ascii-large", "assets/ascii-large.txt");
+                loadAscii("ascii-small", "assets/ascii-small.txt");
+            });
         </script>
     </body>
 </html>
