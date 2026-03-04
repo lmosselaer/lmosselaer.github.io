@@ -48,11 +48,10 @@ header {
 }
 
 .ascii pre.loading {
-    font-family: monospace;
-    font-size: 0.25em !important;
-    display: grid;
+    font-family: inherit;
+    font-size: inherit;
     white-space: pre;
-    line-height: 1;
+    line-height: inherit;
     min-height: calc(9 * 1em);
     color: transparent;
     background: rgba(255,255,255,0.04);
