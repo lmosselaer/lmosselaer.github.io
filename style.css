@@ -119,7 +119,7 @@ p, ol {
 }
 
 hr {
-    border: 2.5px ridge rgb(255, 255, 255);
+    border: 2.5px ridge rgba(255, 255, 255);
     border-radius: 5px;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
 
@@ -199,10 +199,12 @@ img {
 
 #darkmode {
     position: absolute;
+    font-weight: bolder;
     top: 1rem;
-    right: 1rem;
+    right: 0.5rem;
     text-decoration: none;
     font-size: 1em;
+    text-align: center;
 }
 
 body.dark {
