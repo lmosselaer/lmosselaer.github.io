@@ -58,7 +58,7 @@ header {
 .project {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.1rem;
 }
 
 .largeview {
@@ -93,14 +93,14 @@ h2 {
     font-family: Kelmscott, monospace;
     font-size: 1.17em;
     margin: 0;
-    line-height: 0.8;
+    line-height: 0.9;
 }
 
 h3 {
     font-family: Kelmscott, monospace;
     font-size: 1.17em;
     margin: 0;
-    line-height: 0.8;
+    line-height: 0.9;
 }
 
 h4 {
@@ -108,7 +108,7 @@ h4 {
     text-transform: uppercase;
     font-weight: bolder;
     margin: 0;
-    line-height: 1;
+    line-height: 1.1;
 }
 
 p, ol {
@@ -163,12 +163,13 @@ ol li::before {
 
 
 img {
-    border: ridge rgba(255, 255, 255, 1) 5px;
+    border: ridge rgba(229, 255, 235) 2.5px;
     border-radius: 5px;
     width: 100%;
     height: auto;
     display: block;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
@@ -179,7 +180,7 @@ img {
 }
 
 .button {
-    border: 2.5px outset hsl(133, 100%, 95%);
+    border: 2.5px outset rgba(229, 255, 235);
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.22);
     box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
@@ -200,7 +201,7 @@ img {
     position: absolute;
     top: 1rem;
     right: 2rem;
-    font-size: 1em;
+    font-size: 1.3em;
     text-align: center;
 }
 
@@ -210,7 +211,6 @@ body.dark {
 }
 
 body.dark .button {
-    border: 2.5px outset hsla(133, 100%, 95%, 0.8);
     background: rgba(255, 255, 255, 0.5);
     color: rgb(0, 0, 0);
 }
@@ -218,10 +218,6 @@ body.dark .button {
 body.dark .button:hover, body.dark .button.active {
     background: rgba(255, 255, 255, 0.78);
     color: rgba(0,0,0,0.6);
-}
-
-body.dark img {
-    border: 2.5px outset hsla(133, 100%, 95%, 0.8);
 }
 
 @media (max-width: 750px) {
