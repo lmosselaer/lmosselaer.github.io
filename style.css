@@ -1,6 +1,6 @@
 @font-face {
     font-family: Kelmscott;
-    src: url("https://rawcdn.githack.com/seeddisperser/kelmscott-mono/main/KelmscottMono.otf");
+    src: url("assets/fonts/KelmscottMono.woff2");
 }
 
 * {
@@ -264,6 +264,29 @@ body.dark .button:hover, body.dark .button.active {
     height: 100%;
 }
 
+.modal-close {
+    border: 2.5px outset rgb(229, 255, 235);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.modal-close:hover, .modal-close.active {
+    border: 2.5px inset hsla(120, 10%, 20%);
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    background: rgba(0,0,0,0.1);
+    color: rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
 .modal-credits {
     font-weight: bolder;
     margin: 0.75rem;
@@ -301,7 +324,6 @@ body.dark .button:hover, body.dark .button.active {
 
     .modal-content {
         border-width: min(1vw, 5px);
-        width: 100%;
     }
 
     .modal-video-wrapper {
