@@ -128,7 +128,7 @@ p, ol {
 }
 
 hr {
-    border: 2.5px ridge rgb(229, 255, 235);
+    border: 2.5px ridge rgba(211, 215, 220, 0.8);
     box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
 
 }
@@ -144,6 +144,11 @@ footer {
 small {
     font-size: 0.75em;
     font-style: italic;
+    margin: 0;
+}
+
+small2 {
+    font-size: 0.75em;
     margin: 0;
 }
 
