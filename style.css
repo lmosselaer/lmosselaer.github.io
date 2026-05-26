@@ -129,12 +129,18 @@ p, ol {
     line-height: 1.1;
 }
 
+p + p, p + h4, ol + p, .btn-group + h4 {
+    margin-top: 1em;
+}
+
+
 hr {
     border: 2.5px ridge rgba(211, 215, 220, 0.8);
     box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
     align-self: stretch;
     width: 100%;
-    margin: 1;
+    margin-top: 1em;
+    margin-bottom: 1em;
     display: block;
 }
 
