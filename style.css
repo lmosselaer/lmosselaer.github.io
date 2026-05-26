@@ -72,6 +72,7 @@ header {
     gap: 0.1rem;
 }
 
+
 .largeview {
     display: inline-block;
 }
@@ -101,6 +102,7 @@ h1 {
 
 h2 {
     font-family: Kelmscott, monospace;
+    text-transform: uppercase;
     font-size: 1.17em;
     margin: 0;
     line-height: 0.9;
@@ -130,7 +132,8 @@ p, ol {
 hr {
     border: 2.5px ridge rgba(211, 215, 220, 0.8);
     box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
-
+    align-self: stretch;
+    width: 100%;
 }
 
 footer {
@@ -188,6 +191,28 @@ img {
     margin-bottom: 0.5rem;
 }
 
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border: 5px ridge rgba(211, 215, 220, 0.8);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+        margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
 .btn-group {
     display: flex;
     flex-wrap: wrap;
@@ -223,7 +248,7 @@ img {
 
 body.dark, body.dark .modal-content {
     background-image: url("assets/images/bg-helldiscdark2000.webp");
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 body.dark .button {
@@ -315,6 +340,11 @@ body.dark .button:hover, body.dark .button.active {
     border-radius: 5px;
     background: rgba(0,0,0,0.15);
     box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.thumbnail {
+    object-fit: contain;
+    background: #000;
 }
 
 @media (max-width: 700px) {
