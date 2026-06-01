@@ -187,6 +187,15 @@ ol li::before {
     content: counter(item) ". ";
 }
 
+#tracklist li::before {
+    content: none;
+}
+
+#tracklist li a {
+    display: inline-block;
+    width: 1em;
+}
+
 
 img {
     border: ridge rgb(229, 255, 235) 5px;

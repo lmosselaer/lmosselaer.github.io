@@ -58,7 +58,7 @@
                     <iframe
                         title="embedded video"
                         id="video-frame"
-                        src="https://www.youtube-nocookie.com/embed/m_fE76CwVp8?si=rEX8jAMlF1hTVF3g"
+                        src="https://player.vimeo.com/video/1197328677"
                         frameborder="0"
                         allow="autoplay; fullscreen; picture-in-picture"
                         allowfullscreen>
@@ -99,8 +99,8 @@
             </div>
 
             <div class="project" data-category="live">
-                <h1>Memory Forgetter Live</h1>
-                <h3>on Kiosk Radio</h3>
+                <h1>Memory Forgetter</h1>
+                <h3>for Recovery Channel  on Kiosk Radio</h3>
                 <a href="https://www.kioskradio.com/episode/2025-02-18/outsiders-recovery-channel-w-luuk-age" target="_blank">
                     <img
                         alt="Artwork for Luuk Age's Recovery Channel radio show on Kiosk Radio"
@@ -142,66 +142,98 @@
                 <div class="btn-group">
                     <a class="button" href="https://luukage.bandcamp.com/album/memory-forgetter" target="_blank">Bandcamp</a>
                     <a class="button" href="https://www.ninaprotocol.com/releases/memory-forgetter" target="_blank">Nina</a>
+                    <a class="button" href="https://www.subvert.fm/luuk-age/memory-forgetter" target="_blank">Subvert</a>
                     <a class="button" href="https://open.spotify.com/album/5vQl525R9r3TQWJSayksnH?si=nvB3NVMFTJC5Zs92LoUZ0w" target="_blank">Spotify</a>
                     <a class="button" href="https://music.apple.com/album/memory-forgetter/1862904652" target="_blank">Apple Music</a>
                     <a class="button" href="https://www.youtube.com/watch?v=MANAFy3-uQE" target="_blank">YouTube</a>
                     <a class="button" href="https://soundcloud.com/lmo21/sets/memory-forgetter" target="_blank">SoundCloud</a>
                 </div>
+
                 <h4>Tracklist</h4>
-                <ol>
-                    <li>Big Orb Energy</li>
-                    <li>Mass Comparison</li>
-                    <li>Helldisc</li>
-                    <li>Moss P3</li>
-                    <li>Glutter</li>
-                    <li>Horord Prog</li>
-                    <li>Fake Hand</li>
-                    <li>0y</li>
-                    <li>Wind Dream With Giant</li>
-                    <li>Dogtown</li>
-                    <li>Average Past Reversing</li>
-                    <li>Auto</li>
-                    <li>Server Thoughts and Desires</li>
-                    <li>Requiem for Audio Data Loss and Organ</li>
-                </ol>
-                <p>
-                    <audio id="album-player" preload="none">
-                        <source src="assets/audio/00-Memory_Forgetter.mp3" type="audio/mpeg">
-                    </audio>
-                        <a href="#" id="play-button" onclick="toggleAudio(); return false;">
-                            <span class="icon">►</span></a>
-                        <span id="time-remaining">47:38</span>
+                    <audio id="album-player" preload="none"></audio>
+                    <ol id="tracklist">
+                        <li data-src="assets/audio/01-Big_Orb_Energy.mp3">Big Orb Energy</li>
+                        <li data-src="assets/audio/02-Mass_Comparison.mp3">Mass Comparison</li>
+                        <li data-src="assets/audio/03-Helldisc.mp3">Helldisc</li>
+                        <li data-src="assets/audio/04-Moss_P3.mp3">Moss P3</li>
+                        <li data-src="assets/audio/05-Glutter.mp3">Glutter</li>
+                        <li data-src="assets/audio/06-Horord_Prog.mp3">Horord Prog</li>
+                        <li data-src="assets/audio/07-Fake_Hand.mp3">Fake Hand</li>
+                        <li data-src="assets/audio/08-0y.mp3">0y</li>
+                        <li data-src="assets/audio/09-Wind_Dream_With_Giant.mp3">Wind Dream With Giant</li>
+                        <li data-src="assets/audio/10-Dogtown.mp3">Dogtown</li>
+                        <li data-src="assets/audio/11-Average_Past_Reversing.mp3">Average Past Reversing</li>
+                        <li data-src="assets/audio/12-Auto.mp3">Auto</li>
+                        <li data-src="assets/audio/13-Server_Thoughts_and_Desires.mp3">Server Thoughts and Desires</li>
+                        <li data-src="assets/audio/14-Requiem_for_Audio_Data_Loss_and_Organ.mp3">Requiem for Audio Data Loss and Organ</li>
+                    </ol>
+                <p></p>
                 <script>
                     const player = document.getElementById("album-player");
-                    const icon = document.getElementById("play-button");
-                    const timeDisplay = document.getElementById('time-remaining');
+                    let activeLi = null;
 
-                    function formatTime(seconds) {
-                        const mins = Math.floor(seconds / 60);
-                        const secs = Math.floor(seconds % 60);
-                        return mins + ":" + (secs < 10 ? "0" + secs : secs);
-                    }
+                    document.getElementById("tracklist").querySelectorAll("li").forEach((li, index) => {
+                        const btn = document.createElement("a");
+                        btn.href = "#";
+                        btn.textContent = "►";
 
-                    function toggleAudio() {
-                        if (player.paused) {
-                            player.play();
-                            icon.textContent = "⏸︎";
-                        } else {
-                            player.pause();
-                            icon.textContent = "►";
-                        }
-                    }
+                        const num = document.createElement("span");
+                        num.textContent = (index + 1) + ". ";
 
-                    player.addEventListener("timeupdate", function () {
-                        const remaining = player.duration - player.currentTime;
-                        if (!isNaN(remaining)) { timeDisplay.textContent = formatTime(remaining); }
+                        li.prepend(num);
+                        li.prepend(btn);
+
+                        btn.onclick = function(e) {
+                            e.preventDefault();
+                            if (activeLi === li && !player.paused) {
+                                player.pause();
+                                btn.textContent = "►";
+                            } else {
+                                if (activeLi && activeLi !== li) {
+                                    activeLi.querySelector("a").textContent = "►";
+                                }
+                                if (activeLi !== li) {
+                                player.pause();
+                                player.src = li.dataset.src;
+                                player.load();
+                                activeLi = li;
+                            }
+
+                                player.play();
+                                btn.textContent = "⏸︎";
+                            }
+                        };
+
+                        player.addEventListener("ended", () => {
+                            btn.textContent = "►";
+                        });
                     });
 
-                    player.addEventListener("ended", function () {
-                        button.textContent = "▶";
+                    player.addEventListener("ended", () => {
+                        if (activeLi) {
+                            activeLi.querySelector("a").textContent = "►";
+                            const nextLi = activeLi.nextElementSibling;
+                            if (nextLi) {
+                                nextLi.querySelector("a").click();
+                            } else {
+                                activeLi = null;
+                            }
+                        }
                     });
                 </script>
-                </p>
+                <div class="video-wrapper">
+                    <iframe
+                        title="embedded video"
+                        id="video-frame"
+                        src="https://player.vimeo.com/video/1182379989"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="btn-group">
+                    <a class="button" href="https://youtu.be/r9uL4qysadI?si=v6LxYaMPO55NA5vv" target="_blank">YouTube</a>
+                </div>
                 <h4>Background</h4>
                 <p>
                     Back in 2021, I experimented with the sound of a glitching meditation cd. It turned into a lot more experiments with the manipulation of cd's and mp3's to create otherworldly sounds. The resulting album combines both meditative and jarring moments, like a computer’s intense dreams.
