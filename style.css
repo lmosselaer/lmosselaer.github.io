@@ -364,9 +364,9 @@ body.dark .button:hover, body.dark .button.active {
     background: #000;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 700px) {
     body {
-        padding: 0 1.5reix;
+        padding: 0 1.5rem;
         font-size: clamp(18px, 4vw, 25px);
         background-attachment: scroll;
     }
